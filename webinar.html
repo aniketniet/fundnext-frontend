@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fund Nest</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css"
+      integrity="sha384-NvKbDTEnL+A8F/AA5Tc5kmMLSJHUO868P+lDtTpJIeQdGYaUIuLr4lVGOEA1OcMy"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="FundNest.css" />
+    <style>
+      .webinar-container {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .webinar-title {
+        font-size: 2rem;
+        color: #333;
+      }
+
+      .webinar-description {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .webinar-footer button {
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 5px;
+      }
+
+      .webinar-footer button:hover {
+        background-color: #0056b3;
+      }
+
+      @media (max-width: 768px) {
+        .col-md-6 {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="d-flex justify-content-between shadow-sm py-2">
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <div class="d-flex gap-2">
+              <img src="Images/logo.PNG" style="height: 2.5rem" />
+              <a
+                class="navbar-brand"
+                href="index.html"
+                style="font-size: x-large"
+                >BRANDNEERS</a
+              >
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <!-- Other nav items -->
+                <li class="nav-item">
+                  <a
+                    class="nav-link fw-semibold"
+                    aria-current="page"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-semibold" href="#aboutFundnest"
+                    >About</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-semibold" href="#blogs">Blogs</a>
+                </li>
+                <li class="nav-item" id="courseSection" style="display: none">
+                  <a class="nav-link fw-semibold" href="Course.html">Courses</a>
+                </li>
+                <li class="nav-item" id="resourceSection" style="display: none">
+                  <a class="nav-link fw-semibold" href="Resources.html"
+                    >Resources</a
+                  >
+                </li>
+                <li
+                  class="nav-item"
+                  id="consultUsSection"
+                  style="display: none"
+                >
+                  <a
+                    class="nav-link fw-semibold"
+                    href="Consultancy.html"
+                    id="consultLink"
+                    >ConsultUs</a
+                  >
+                </li>
+                <!-- Conditional nav items -->
+                <li
+                  class="nav-item fw-semibold"
+                  id="entrepreneurIdea"
+                  style="display: none"
+                >
+                  <a class="nav-link" href="EntrepreneurIdeas.html"
+                    >Entrepreneur Ideas</a
+                  >
+                </li>
+                <li
+                  class="nav-item fw-semibold"
+                  id="entrepreneurList"
+                  style="display: none"
+                >
+                  <a class="nav-link" href="EntrepreneurPane.html"
+                    >Entrepreneur List</a
+                  >
+                </li>
+                <li
+                  class="nav-item fw-semibold"
+                  id="investorIdea"
+                  style="display: none"
+                >
+                  <a class="nav-link" href="InvestorIdeas.html"
+                    >Investor Ideas</a
+                  >
+                </li>
+                <li
+                  class="nav-item fw-semibold"
+                  id="investorlist"
+                  style="display: none"
+                >
+                  <a class="nav-link" href="InvestorPane.html">Investor List</a>
+                </li>
+
+                <buttton class="nav-item">
+                  <a
+                    class="nav-link rounded px-3 fw-semibold"
+                    style="
+                      margin-left: 28rem;
+                      background-color: rgba(0, 0, 0, 0.13);
+                    "
+                    id="loginLink"
+                    href="Login.html"
+                    >Login</a
+                  >
+                </buttton>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Profile dropdown -->
+        <div
+          class="dropdown mt-4"
+          style="margin-right: 1rem"
+          id="profileDropdown"
+        >
+          <a
+            href="#"
+            class="d-flex align-items-center link-dark text-decoration-none"
+            id="profileDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="currentColor"
+              class="bi bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+              />
+            </svg>
+          </a>
+          <ul class="dropdown-menu text-small shadow">
+            <li class="nav-item" id="investorprofile" style="display: none">
+              <a class="nav-link" href="InvestorProfilePage.html"
+                >Your Profile</a
+              >
+            </li>
+            <li class="nav-item" id="entrepreneurprofile" style="display: none">
+              <a class="nav-link" href="EntrepreneurProfilePage.html"
+                >Your Profile</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li class="nav-item" id="mycourse" style="display: none">
+              <a class="nav-link" href="Mycourse.html"
+                >My Course</a
+              >
+            </li>
+
+            <li><hr class="dropdown-divider" /></li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="wallet.html"
+                >Wallet</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+
+
+            <li class="nav-item">
+              <button class="nav-link" id="logoutLink" href="index.html">
+                Log Out
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container webinar-container mt-5">
+      <div class="row">
+        <!-- Video Section (Left Side) -->
+        <div class="col-md-6">
+          <div class="webinar-video mb-4">
+            <video width="100%" controls id="webinar-video" class="rounded">
+              <source id="video-source" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <!-- Webinar Details Section (Right Side) -->
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <h1 class="webinar-title fw-bold" id="webinar-title"></h1>
+          <p class="text-muted mb-1">
+            <strong>Date:</strong> <span id="webinar-date">Sep 20, 2024</span>
+          </p>
+          <p class="webinar-description mb-3" id="webinar-description"></p>
+          <p class="fw-bold mb-4">
+            <strong>Cost:</strong> <span id="webinar-cost"></span>
+          </p>
+
+          <div class="webinar-footer">
+            <button
+              class="btn btn-primary px-4 py-2"
+              id="book-now-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Details</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="webinarForm">
+              <div class="">
+                <label
+                  for="profileName"
+                  class="form-label fs-5 fw-semibold text-primary"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  style="height: 3.5rem"
+                  required
+                />
+              </div>
+              <div class="">
+                <label
+                  for="email"
+                  class="form-label fs-5 fw-semibold text-primary"
+                  >Email ID</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  style="height: 3.5rem"
+                  required
+                />
+              </div>
+              <div class="">
+                <label
+                  for="purposeOfBooking"
+                  class="form-label fs-5 fw-semibold text-primary"
+                  >Purpose of Booking</label
+                >
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="purposeOfBooking"
+                  name="purposeOfBooking"
+                  style="height: 3.5rem"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="text-white mt-5 px-4 py-2 border-0 bg-primary rounded"
+                style="height: 3rem"
+              >
+                Make a Payment
+              </button>
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+             <button
+               type="button"
+               class="btn btn-secondary"
+               data-bs-dismiss="modal"
+             >
+               Close
+             </button>
+             <button type="button" class="btn btn-primary">Save changes</button>
+           </div> -->
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+      function updateNavbar() {
+        const token = localStorage.getItem("token");
+        const loginLink = document.getElementById("loginLink");
+        const logoutLink = document.getElementById("logoutLink");
+        const profileDropdown = document.getElementById("profileDropdown");
+    
+        if (token) {
+          loginLink.style.display = "none";
+          logoutLink.style.display = "block";
+          profileDropdown.style.display = "block";
+        } else {
+          loginLink.style.display = "block";
+          logoutLink.style.display = "none";
+          profileDropdown.style.display = "none";
+        }
+      }
+    
+      async function updateUserNavigation(token) {
+        try {
+          const response = await axios.get("http://localhost:3000/check/role", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+    
+          if (response.status === 200) {
+            const userType = response.data.role;
+            console.log("usertype:", userType);
+    
+            // Show the appropriate profile link
+            const investorProfile = document.getElementById("investorprofile");
+            const entrepreneurProfile = document.getElementById(
+              "entrepreneurprofile"
+            );
+    
+            console.log(userType === "entrepreneur");
+            if (userType === "entrepreneur") {
+              entrepreneurProfile.style.display = "block";
+              investorProfile.style.display = "none";
+              // document.getElementById("entrepreneurSection").style.display =
+              //   "block";
+              // document.getElementById("wallet1").innerText =`Wallet: (${response.data.wallet})`
+    
+              document.getElementById("mycourse").style.display = "block";
+    
+              // document.getElementById("investorSection").style.display = "none";
+              // Hide Entrepreneur Ideas and Entrepreneur List from entrepreneurs
+              document.getElementById("entrepreneurIdea").style.display =
+                "none";
+              document.getElementById("entrepreneurList").style.display =
+                "none";
+    
+              // Show Investor Ideas and Investor List to entrepreneurs
+              // document.getElementById("investorIdea").style.display = "block";
+              document.getElementById("investorlist").style.display = "block";
+    
+              // Show the success section only to entrepreneurs
+              // document.getElementById("sucessSection").style.display = "block";
+    
+              console.log("response");
+              // Show Course, Resources, and ConsultUs sections for entrepreneurs
+              document.getElementById("courseSection").style.display = "block";
+              document.getElementById("resourceSection").style.display =
+                "block";
+              document.getElementById("consultUsSection").style.display =
+                "block"; // Ensure ConsultUs is displayed
+            } else if (userType === "investor") {
+              investorProfile.style.display = "block";
+              entrepreneurProfile.style.display = "none";
+              document.getElementById("entrepreneurSection").style.display =
+                "none";
+              document.getElementById("investorSection").style.display =
+                "block";
+    
+              // Show Entrepreneur Ideas and Entrepreneur List for investors
+              document.getElementById("entrepreneurIdea").style.display =
+                "block";
+              document.getElementById("entrepreneurList").style.display =
+                "block";
+    
+              // Hide Investor Ideas and Investor List from investors
+              document.getElementById("investorIdea").style.display = "none";
+              document.getElementById("investorlist").style.display = "none";
+    
+              // Hide Course, Resources, and ConsultUs sections from investors if needed
+              document.getElementById("courseSection").style.display = "none";
+              document.getElementById("resourceSection").style.display = "none";
+              console.log("Course section");
+              document.getElementById("consultUsSection").style.display =
+                "none";
+              // Hide the success section from investors
+              document.getElementById("sucessSection").style.display = "none";
+            } else {
+              entrepreneurProfile.style.display = "none";
+              investorProfile.style.display = "none";
+              document.getElementById("entrepreneurSection").style.display =
+                "none";
+              document.getElementById("investorSection").style.display = "none";
+            }
+          } else {
+            console.error("Failed to fetch user type:", response.statusText);
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+    
+      document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem("token");
+    
+        updateNavbar();
+    
+        if (token) {
+          updateUserNavigation(token);
+        } else {
+          // If no one is logged in, show the Consult Us section but disable the link
+          document.getElementById("consultUsSection").style.display = "block";
+          document.getElementById("consultLink").setAttribute("href", "#"); // Disable access without login
+          document
+            .getElementById("consultLink")
+            .addEventListener("click", function (event) {
+              event.preventDefault();
+              alert("Please Log in");
+              // open login page
+              window.location.href = "login.html";
+            });
+        }
+      });
+    
+      async function handleLogout() {
+        try {
+          const response = await axios.post(
+            "http://localhost:3000/auth/logout"
+          );
+          alert(response.data.message);
+          localStorage.removeItem("token");
+          window.location.href = "index.html";
+        } catch (error) {
+          console.error("Logout error:", error);
+          alert("Logout failed. Please try again.");
+        }
+      }
+    
+      document
+        .getElementById("logoutLink")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default link behavior
+          handleLogout(); // Call the logout function when link is clicked
+        });
+    </script>
+    
+    <script>
+      // on clink consultsus open loagin
+    
+      document
+        .getElementById("log1")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default link behavior
+          window.location.href = "login.html"; // Redirect to login page
+        });
+    </script> 
+    <script>
+      async function fetchWebinarDetails() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get("id");
+         console.log("videoID",videoId)
+        try {
+          const token = localStorage.getItem("token");
+          console.log(token, 'token');
+          
+          if (!token) {
+            console.error("Token not found");
+            return;
+          }
+         
+          const config = {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          };
+          console.log(config, 'congig');
+          
+
+          // Fetch the video details
+          const response = await axios.get(
+            `http://localhost:4000/videos/all/${videoId}`,
+             config
+          );
+          console.log(response, 'res');
+          
+          const video = response.data.video; // Accessing video object correctly
+
+          // Set video title, description, and cost
+          document.getElementById("webinar-title").textContent = video.title;
+          document.getElementById("webinar-description").textContent =
+            video.description;
+          document.getElementById(
+            "webinar-cost"
+          ).textContent = `₹ ${video.cost}`;
+
+          // Set formatted date
+          document.getElementById("webinar-date").textContent = new Date(
+            video.date
+          ).toLocaleDateString();
+
+          // Set the video source and load the video
+          const videoElement = document.getElementById("webinar-video");
+          const sourceElement = document.getElementById("video-source");
+
+          // Log video URL to verify
+          console.log(video.url);
+
+          // Assign video URL to the source element
+          sourceElement.src = video.url;
+
+          // Reload the video to apply the new source
+          videoElement.load();
+        } catch (error) {
+          console.error("Error fetching video details:", error);
+        }
+      }
+
+      // Ensure the function is called when the window loads
+      window.onload = fetchWebinarDetails;
+    </script>
+
+    <script>
+      document
+        .getElementById("webinarForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Get the form data
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const purposeOfBooking =
+            document.getElementById("purposeOfBooking").value;
+
+          // Create the payload
+          const payload = {
+            name: name,
+            email: email,
+            purposeOfBooking: purposeOfBooking,
+          };
+
+          try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+              console.error("Token not found");
+              return;
+            }
+
+            const config = {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+              },
+            };
+
+            // Send the POST request using Axios to create a webinar booking
+            const response = await axios.post(
+              "http://localhost:3000/webinars/webinar",
+              payload,
+              config
+            );
+
+            // Handle the response
+            if (response.status === 201) {
+              const { razorpayOrder } = response.data;
+
+              const options = {
+                key: "rzp_test_n5oTuMseyDclhS", // Enter the Key ID generated from the Dashboard
+                amount: razorpayOrder.amount.toString(),
+                currency: razorpayOrder.currency,
+                name: "Webinar Booking",
+                description: "Test Transaction",
+                order_id: razorpayOrder.id,
+                handler: async function (response) {
+                  // Handle the payment success
+                  alert("Thank you , Your Webinar is Booked");
+                  window.location.reload();
+                },
+                prefill: {
+                  name: name,
+                  email: email,
+                },
+                theme: {
+                  color: "#3399cc",
+                },
+              };
+
+              const paymentObject = new Razorpay(options);
+              paymentObject.open();
+            }
+          } catch (error) {
+            // Handle errors
+            console.error("Error creating webinar booking:", error);
+            alert("Failed to create webinar booking. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>

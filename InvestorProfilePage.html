@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fund Nest</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="FundNest.css" />
+    <style>
+      @media (max-width: 768px) {
+        .card-body {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .card-body .d-flex {
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+        }
+
+        .card-body img {
+          width: 15rem;
+          height: 15rem;
+          margin-bottom: 1rem;
+        }
+
+        .card-body .gap-5 {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .card-body .mt-4 {
+          text-align: center;
+        }
+
+        .card-body .gap-4 {
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+        }
+
+        .card-body .btn {
+          width: 100%;
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- NavBar -->
+      <div class="d-flex justify-content-between shadow-sm py-2">
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <div class="d-flex gap-2">
+              <img src="Images/logo.PNG" style="height: 2.5rem" />
+              <a
+                class="navbar-brand"
+                href="index.html"
+                style="font-size: x-large"
+                >BRANDNEERS</a
+              >
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <!-- Other nav items -->
+                <li class="nav-item">
+                  <a
+                    class="nav-link fw-semibold"
+                    aria-current="page"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-semibold" href="#aboutFundnest"
+                    >About</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-semibold" href="#blogs">Blogs</a>
+                </li>
+                <li class="nav-item" id="courseSection" style="display: none">
+                  <a class="nav-link fw-semibold" href="Course.html">Courses</a>
+                </li>
+                <li class="nav-item" id="resourceSection" style="display: none">
+                  <a class="nav-link fw-semibold" href="Resources.html"
+                    >Resources</a
+                  >
+                </li>
+                <li
+                  class="nav-item"
+                  id="consultUsSection"
+                  style="display: none"
+                >
+                  <a
+                    class="nav-link fw-semibold"
+                    href="Consultancy.html"
+                    id="consultLink"
+                    >ConsultUs</a
+                  >
+                </li>
+                <!-- Conditional nav items -->
+                <li
+                  class="nav-item fw-semibold"
+                  id="entrepreneurIdea"
+                  style="display: none"
+                >
+                  <a class="nav-link" href="EntrepreneurIdeas.html"
+                    >Entrepreneur Ideas</a
+                  >
+                </li>
+                <li
+                  class="nav-item fw-semibold"
+                  id="entrepreneurList"
+                  style="display: none"
+                >
+                  <a class="nav-link" href="EntrepreneurPane.html"
+                    >Entrepreneur List</a
+                  >
+                </li>
+                <li
+                  class="nav-item fw-semibold"
+                  id="investorIdea"
+                  style="display: none"
+                >
+                  <a class="nav-link" href="InvestorIdeas.html"
+                    >Investor Ideas</a
+                  >
+                </li>
+                <li
+                  class="nav-item fw-semibold"
+                  id="investorlist"
+                  style="display: none"
+                >
+                  <a class="nav-link" href="InvestorPane.html">Investor List</a>
+                </li>
+
+                <buttton class="nav-item">
+                  <a
+                    class="nav-link rounded px-3 fw-semibold"
+                    style="
+                      margin-left: 28rem;
+                      background-color: rgba(0, 0, 0, 0.13);
+                    "
+                    id="loginLink"
+                    href="Login.html"
+                    >Login</a
+                  >
+                </buttton>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Profile dropdown -->
+        <div
+          class="dropdown mt-4"
+          style="margin-right: 1rem"
+          id="profileDropdown"
+        >
+          <a
+            href="#"
+            class="d-flex align-items-center link-dark text-decoration-none"
+            id="profileDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="currentColor"
+              class="bi bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+              />
+            </svg>
+          </a>
+          <ul class="dropdown-menu text-small shadow">
+            <li class="nav-item" id="investorprofile" style="display: none">
+              <a class="nav-link" href="InvestorProfilePage.html"
+                >Your Profile</a
+              >
+            </li>
+            <li class="nav-item" id="entrepreneurprofile" style="display: none">
+              <a class="nav-link" href="EntrepreneurProfilePage.html"
+                >Your Profile</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li class="nav-item" id="mycourse" style="display: none">
+              <a class="nav-link" href="Mycourse.html"
+                >My Course</a
+              >
+            </li>
+
+            <li><hr class="dropdown-divider" /></li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="wallet.html"
+                >Wallet</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+
+
+            <li class="nav-item">
+              <button class="nav-link" id="logoutLink" href="index.html">
+                Log Out
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h1 class="head display-4 Investor" style="margin-top: 5rem">
+          Your <span style="color: #1753ef">Profile</span>
+        </h1>
+
+        <div style="margin-top: 7rem">
+          <div class="rounded-lg bg-white">
+            <div class="card-body p-5">
+              <div class="d-flex align-items-center gap-4">
+                <img
+                  id="profileImage"
+                  class="rounded-circle"
+                  src="Images/Ellipse 1.png"
+                  alt="Profile Picture"
+                  style="width: 20rem; height: 20rem"
+                />
+                <div>
+                  <div class="d-flex align-items-center gap-5">
+                    <h2 id="userName" class="text-primary fw-semibold"></h2>
+                    <span
+                      id="userEmail"
+                      class="bg-primary text-white px-4 py-2 rounded"
+                    ></span>
+                  </div>
+                  <div
+                    class="d-flex align-items-center gap-4 mt-2 text-secondary"
+                  >
+                    <div class="d-flex align-items-center gap-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-star-fill text-primary"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                      <span id="userRole"></span>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-geo-alt-fill text-primary"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+                        />
+                      </svg>
+                      <span>New Delhi</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-lightbulb-fill text-primary"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5"
+                        />
+                      </svg>
+                      <span>20+ Ideas</span>
+                    </div>
+                  </div>
+                  <p
+                    id="userDescription"
+                    class="mt-4 text-wrap"
+                    style="font-size: x-large ;
+                    "
+                  >
+                   
+                  </p>
+                  <div class="mt-4 d-flex gap-4">
+                    <a href="InvestorSetUpProfile.html">
+                      <button
+                        class="btn btn-primary d-flex align-items-center gap-2"
+                        style="padding-left: 6rem; padding-right: 6rem"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          class="bi bi-person-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                          />
+                        </svg>
+                        <span>Edit Profile</span>
+                      </button>
+                    </a>
+                    <button
+                      class="btn btn-danger d-flex align-items-center gap-2"
+                      style="padding-left: 6rem; padding-right: 6rem"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-lightbulb-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5"
+                        />
+                      </svg>
+                      <span>Share Idea</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <h1 class="head display-4 Investor" style="margin-top: 5rem">
+          Submit Your Business <span style="color: #1753ef">Ideas</span>
+        </h1>
+
+        <div class="p-5" style="border: 1px solid #1753ef">
+          <form>
+            <div class="mb-3">
+              <label
+                for="exampleInputEmail1"
+                class="form-label mt-5 fs-5 fw-semibold text-primary"
+                >Company name</label
+              >
+              <input
+                type="name"
+                class="form-control mt-3"
+                style="height: 3.5rem"
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="exampleInputEmail1"
+                class="form-label mt-3 fs-5 fw-semibold text-primary"
+                >Goal</label
+              >
+              <input
+                type="name"
+                class="form-control mt-3"
+                style="height: 3.5rem"
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="exampleInputEmail1"
+                class="form-label mt-3 fs-5 fw-semibold text-primary"
+                >Domain</label
+              >
+              <input
+                type="name"
+                class="form-control mt-3"
+                style="height: 3.5rem"
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="exampleInputEmail1"
+                class="form-label mt-3 fs-5 fw-semibold text-primary"
+                >Content</label
+              >
+              <input
+                type="name"
+                class="form-control mt-3"
+                style="height: 15rem"
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="exampleInputEmail1"
+                class="form-label mt-3 fs-5 fw-semibold text-primary"
+                >Add Attachments (Optional)</label
+              >
+            </div>
+            <button
+              type="submit"
+              class="px-5 py-2 rounded bg-light"
+              style="border: 1px solid #1753ef; color: #1753ef; width: 12rem"
+            >
+              Add
+            </button>
+          </form>
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="text-white px-5 py-4 border-0 mt-5"
+              style="background-color: #343434; width: 20rem"
+            >
+              Make Payment
+            </button>
+          </div>
+        </div> -->
+
+
+        
+      </div>
+    </div>
+
+    <div class="text-white p-5 mt-5" style="background-color: black">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Join our newsletter to follow our news</h3>
+            <!-- </div>
+          <div class="col-md-2"> -->
+            <h3 class="font-weight-bold mt-5">LOGO</h3>
+            <p class="mt-4">
+              Lörem ipsum od ohet dilogi. Bell trabel, samuligt, ohöbel utom
+              diska. Jinesade bel när feras redorade i belogi. FAR paratyp i
+              muvåning, och pesask vyfisat. Viktiga poddradio har un mad och
+              inde.
+            </p>
+            <div class="d-flex mb-5 mt-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-facebook"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-twitter social"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-linkedin social"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-instagram social"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.231.047s-2.389-.009-3.232-.047c-.78-.035-1.203-.166-1.485-.276a2.47 2.47 0 0 1-.92-.598 2.48 2.48 0 0 1-.598-.92c-.11-.281-.24-.704-.276-1.485-.038-.843-.047-1.096-.047-3.231s.009-2.388.047-3.231c.036-.78.166-1.203.276-1.485.145-.373.318-.64.598-.92.28-.28.546-.453.92-.599.282-.109.705-.24 1.485-.275.843-.039 1.096-.046 3.232-.046zm.002 2.617a4.541 4.541 0 1 0 0 9.082 4.541 4.541 0 0 0 0-9.082zm0 7.497a2.956 2.956 0 1 1 0-5.912 2.956 2.956 0 0 1 0 5.912zm5.876-7.682a1.067 1.067 0 1 1-2.135 0 1.067 1.067 0 0 1 2.135 0z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex flex-wrap mb-5">
+              <input
+                type="email"
+                class="form-control rounded-3 mb-2 mb-md-0"
+                style="height: 2.5rem; flex: 1; margin-right: 1.5rem"
+                placeholder="Email"
+              />
+              <div style="width: 5rem">
+                <button
+                  class="btn btn-light rounded-3"
+                  style="flex: 1; width: 8rem; height: 2.5rem"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-md-4">
+                <h3 class="h5 font-weight-bold">Pages</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none"
+                      >Our Story</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none"
+                      >Mission & Values</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none">Team</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none"
+                      >Careers</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h3 class="h5 font-weight-bold">Services</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none"
+                      >Our Story</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none"
+                      >Mission & Values</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none">Team</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none"
+                      >Careers</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h3 class="h5 font-weight-bold">Contact</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none"
+                      >Our Story</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none"
+                      >Mission & Values</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-white text-decoration-none">Team</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="FAQs.html" class="text-white text-decoration-none"
+                      >FAQ s</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      // Fetch current user data from backend
+      async function fetchCurrentUser() {
+        try {
+          const token = localStorage.getItem("token"); // Assuming token is stored in localStorage
+          if (!token) {
+            console.error("Token not found");
+            return;
+          }
+
+          const response = await axios.get(
+            "http://localhost:3000/investor/currentuser",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+
+          if (response.status === 200) {
+            const user = response.data;
+            console.log(user);
+            populateUserProfile(user);
+          } else {
+            console.error("Error fetching current user:", response.statusText);
+            displayError("Failed to fetch user data");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          displayError("An error occurred");
+        }
+      }
+
+      // Populate user profile with fetched data
+      function populateUserProfile(user) {
+        document.getElementById("profileImage").src = `Images/Ellipse 1.png`; // Update with actual image URL
+        document.getElementById("userName").textContent = user.currentUser.name;
+        document.getElementById("userEmail").textContent =
+          user.currentUser.email;
+        document.getElementById("userRole").textContent = user.currentUser.role;
+        document.getElementById("userDescription").textContent =
+          user.currentUser.description; // Assuming description is part of user data
+      }
+
+      // Display error message on the page
+      function displayError(message) {
+        const profileDiv = document.getElementById("profile");
+        if (profileDiv) {
+          profileDiv.innerHTML = `<p>${message}</p>`;
+        } else {
+          console.error("Profile element not found");
+        }
+      }
+
+      // Call fetchCurrentUser when the page loads
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchCurrentUser();
+      });
+    </script>
+
+    
+<script>
+  function updateNavbar() {
+    const token = localStorage.getItem("token");
+    const loginLink = document.getElementById("loginLink");
+    const logoutLink = document.getElementById("logoutLink");
+    const profileDropdown = document.getElementById("profileDropdown");
+
+    if (token) {
+      loginLink.style.display = "none";
+      logoutLink.style.display = "block";
+      profileDropdown.style.display = "block";
+    } else {
+      loginLink.style.display = "block";
+      logoutLink.style.display = "none";
+      profileDropdown.style.display = "none";
+    }
+  }
+
+  async function updateUserNavigation(token) {
+    try {
+      const response = await axios.get("http://localhost:3000/check/role", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.status === 200) {
+        const userType = response.data.role;
+        console.log("usertype:", userType);
+
+        // Show the appropriate profile link
+        const investorProfile = document.getElementById("investorprofile");
+        const entrepreneurProfile = document.getElementById(
+          "entrepreneurprofile"
+        );
+
+        console.log(userType === "entrepreneur");
+        if (userType === "entrepreneur") {
+          entrepreneurProfile.style.display = "block";
+          investorProfile.style.display = "none";
+          // document.getElementById("entrepreneurSection").style.display =
+          //   "block";
+          // document.getElementById("wallet1").innerText =`Wallet: (${response.data.wallet})`
+
+          document.getElementById("mycourse").style.display = "block";
+
+          // document.getElementById("investorSection").style.display = "none";
+          // Hide Entrepreneur Ideas and Entrepreneur List from entrepreneurs
+          document.getElementById("entrepreneurIdea").style.display =
+            "none";
+          document.getElementById("entrepreneurList").style.display =
+            "none";
+
+          // Show Investor Ideas and Investor List to entrepreneurs
+          // document.getElementById("investorIdea").style.display = "block";
+          document.getElementById("investorlist").style.display = "block";
+
+          // Show the success section only to entrepreneurs
+          // document.getElementById("sucessSection").style.display = "block";
+
+          console.log("response");
+          // Show Course, Resources, and ConsultUs sections for entrepreneurs
+          document.getElementById("courseSection").style.display = "block";
+          document.getElementById("resourceSection").style.display =
+            "block";
+          document.getElementById("consultUsSection").style.display =
+            "block"; // Ensure ConsultUs is displayed
+        } else if (userType === "investor") {
+          console.log("response");
+          investorProfile.style.display = "block";
+          entrepreneurProfile.style.display = "none";
+          // document.getElementById("entrepreneurSection").style.display =
+          //   "none";
+          // document.getElementById("investorSection").style.display =
+          //   "block";
+          // Show Entrepreneur Ideas and Entrepreneur List for investors
+            
+          document.getElementById("entrepreneurIdea").style.display =
+            "block";
+          document.getElementById("entrepreneurList").style.display =
+            "block";
+
+          // Hide Investor Ideas and Investor List from investors
+          document.getElementById("investorIdea").style.display = "none";
+          document.getElementById("investorlist").style.display = "none";
+
+          // Hide Course, Resources, and ConsultUs sections from investors if needed
+          document.getElementById("courseSection").style.display = "none";
+          document.getElementById("resourceSection").style.display = "none";
+          console.log("Course section");
+          document.getElementById("consultUsSection").style.display =
+            "none";
+          // Hide the success section from investors
+          document.getElementById("sucessSection").style.display = "none";
+        } else {
+          entrepreneurProfile.style.display = "none";
+          investorProfile.style.display = "none";
+          document.getElementById("entrepreneurSection").style.display =
+            "none";
+          document.getElementById("investorSection").style.display = "none";
+        }
+      } else {
+        console.error("Failed to fetch user type:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const token = localStorage.getItem("token");
+
+    updateNavbar();
+
+    if (token) {
+      updateUserNavigation(token);
+    } else {
+      // If no one is logged in, show the Consult Us section but disable the link
+      document.getElementById("consultUsSection").style.display = "block";
+      document.getElementById("consultLink").setAttribute("href", "#"); // Disable access without login
+      document
+        .getElementById("consultLink")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          alert("Please Log in");
+          // open login page
+          window.location.href = "login.html";
+        });
+    }
+  });
+
+  async function handleLogout() {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/auth/logout"
+      );
+      alert(response.data.message);
+      localStorage.removeItem("token");
+      window.location.href = "index.html";
+    } catch (error) {
+      console.error("Logout error:", error);
+      alert("Logout failed. Please try again.");
+    }
+  }
+
+  document
+    .getElementById("logoutLink")
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      handleLogout(); // Call the logout function when link is clicked
+    });
+</script>
+<script>
+  // on clink consultsus open loagin
+
+  document
+    .getElementById("log1")
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      window.location.href = "login.html"; // Redirect to login page
+    });
+</script>
+  </body>
+</html>

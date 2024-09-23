@@ -1,0 +1,115 @@
+body {
+  /* font-family: poppins; */
+}
+.navbar-brand {
+  font-size: 40px;
+  font-weight: bold;
+}
+.navbar-nav {
+  /* margin-left: 4.5rem; */
+  font-size: 16px;
+  font-weight: lighter;
+}
+.nav-item {
+  margin-left: 10px;
+}
+.search {
+  width: 100%;
+  height: 3rem;
+  margin-top: 20px;
+}
+.margin {
+  margin-top: 15rem;
+}
+.Innovators {
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
+.head {
+  font-weight: 400;
+}
+.InnovatorsImg {
+  height: 35rem;
+  width: 80%;
+  margin-left: 5rem;
+}
+.learnBtn {
+  margin-top: 10vh;
+  border: none;
+  width: 60%;
+  height: 13%;
+  background-color: #343434;
+  color: white;
+}
+.RectangleImg {
+  height: 30rem;
+  width: 30rem;
+}
+.Success {
+  margin-top: 5rem;
+  text-align: end;
+}
+.IdeaBtn {
+  margin-top: 9vh;
+  border: none;
+  width: 60%;
+  height: 17%;
+  background-color: #343434;
+  color: white;
+}
+.Investor {
+  margin-top: 10rem;
+  text-align: center;
+}
+.social {
+  margin-left: 20px;
+}
+/* .overlay{
+    position: absolute;
+    background-color: #000000d1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+} */
+/* #investorlist{
+    display: none;
+}
+#entrepreneurList{
+    display: none;
+}
+#investorprofile{
+    display: none;
+}
+#entrepreneurprofile{
+    display: none;
+} */
+
+#logoutLink {
+  display: none;
+}
+
+.webinar-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.webinar-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.webinar-description {
+  margin-top: 20px;
+}
+.webinar-video {
+  margin-top: 20px;
+}
+.webinar-footer {
+  margin-top: 20px;
+}
+.webinar-footer button {
+  font-size: 1.25rem;
+}

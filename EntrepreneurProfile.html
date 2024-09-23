@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fund Nest</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="FundNest.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- NavBar -->
+    <div class="d-flex justify-content-between shadow-sm py-2">
+      <!-- NavBar -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <div class="d-flex gap-2">
+            <img src="Images/logo.PNG" style="height: 2.5rem" />
+            <a
+              class="navbar-brand"
+              href="index.html"
+              style="font-size: x-large"
+              >BRANDNEERS</a
+            >
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <!-- Other nav items -->
+              <li class="nav-item">
+                <a
+                  class="nav-link fw-semibold"
+                  aria-current="page"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#aboutFundnest"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#blogs">Blogs</a>
+              </li>
+              <li class="nav-item" id="courseSection" style="display: none">
+                <a class="nav-link fw-semibold" href="Course.html">Courses</a>
+              </li>
+              <li class="nav-item" id="resourceSection" style="display: none">
+                <a class="nav-link fw-semibold" href="Resources.html"
+                  >Resources</a
+                >
+              </li>
+              <li
+                class="nav-item"
+                id="consultUsSection"
+                style="display: none"
+              >
+                <a
+                  class="nav-link fw-semibold"
+                  href="Consultancy.html"
+                  id="consultLink"
+                  >ConsultUs</a
+                >
+              </li>
+              <!-- Conditional nav items -->
+              <li
+                class="nav-item fw-semibold"
+                id="entrepreneurIdea"
+                style="display: none"
+              >
+                <a class="nav-link" href="EntrepreneurIdeas.html"
+                  >Entrepreneur Ideas</a
+                >
+              </li>
+              <li
+                class="nav-item fw-semibold"
+                id="entrepreneurList"
+                style="display: none"
+              >
+                <a class="nav-link" href="EntrepreneurPane.html"
+                  >Entrepreneur List</a
+                >
+              </li>
+              <li
+                class="nav-item fw-semibold"
+                id="investorIdea"
+                style="display: none"
+              >
+                <a class="nav-link" href="InvestorIdeas.html"
+                  >Investor Ideas</a
+                >
+              </li>
+              <li
+                class="nav-item fw-semibold"
+                id="investorlist"
+                style="display: none"
+              >
+                <a class="nav-link" href="InvestorPane.html">Investor List</a>
+              </li>
+
+              <buttton class="nav-item">
+                <a
+                  class="nav-link rounded px-3 fw-semibold"
+                  style="
+                    margin-left: 28rem;
+                    background-color: rgba(0, 0, 0, 0.13);
+                  "
+                  id="loginLink"
+                  href="Login.html"
+                  >Login</a
+                >
+              </buttton>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Profile dropdown -->
+      <div
+        class="dropdown mt-4"
+        style="margin-right: 1rem"
+        id="profileDropdown"
+      >
+        <a
+          href="#"
+          class="d-flex align-items-center link-dark text-decoration-none"
+          id="profileDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+            />
+          </svg>
+        </a>
+        <ul class="dropdown-menu text-small shadow">
+          <li class="nav-item" id="investorprofile" style="display: none">
+            <a class="nav-link" href="InvestorProfilePage.html"
+              >Your Profile</a
+            >
+          </li>
+          <li class="nav-item" id="entrepreneurprofile" style="display: none">
+            <a class="nav-link" href="EntrepreneurProfilePage.html"
+              >Your Profile</a
+            >
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li class="nav-item" id="mycourse" style="display: none">
+            <a class="nav-link" href="Mycourse.html"
+              >My Course</a
+            >
+          </li>
+
+          <li><hr class="dropdown-divider" /></li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="wallet.html"
+              >Wallet</a
+            >
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+
+
+          <li class="nav-item">
+            <button class="nav-link" id="logoutLink" href="index.html">
+              Log Out
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center bg-primary text-white p-5 rounded-3 shadow-lg mx-auto" style="
+          max-width: 100%;
+          height: auto;
+          background: linear-gradient(to bottom, #1753ef, #0d3089);
+        ">
+      <img class="rounded-circle border border-white" src="Images/IMG_2025-1.jpg" alt="Profile Picture"
+        style="width: 10rem; height: 10rem; border-width: 4px" />
+      <h2 class="mt-4" id="entrepreneurCompanyname">James</h2>
+      <span class="mt-2 px-5 py-2 bg-white text-primary rounded font-weight-medium" style="font-size: 1rem"
+        id="entrepreneurRole">Entrepreneur</span>
+      <p class="mt-4 text-center" style="font-size: 1.12rem" id="entrepreneurName">
+        ( Founder and Chief Executive at ABC Firms )
+      </p>
+    </div>
+    <div class="d-flex flex-column align-items-center mt-3">
+      <div class="row justify-content-center" style="width: -webkit-fill-available">
+        <div class="col-12 col-md-6 mt-3">
+          <button class="btn btn-outline-danger w-100" style="height: 3.1rem">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-megaphone-fill" viewBox="0 0 16 16">
+              <path
+                d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25 25 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009l.496.008a64 64 0 0 1 1.51.048m1.39 1.081q.428.032.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a66 66 0 0 1 1.692.064q.491.026.966.06" />
+            </svg>
+            Express Interest
+          </button>
+        </div>
+        <div class="col-12 col-md-6 mt-3">
+          <a href="#" id="entrepreneurID"><button class="btn btn-outline-primary w-100" style="height: 3.1rem">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-messenger"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.64.64 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.64.64 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76m5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z" />
+              </svg>
+              Message
+            </button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="align-items-center" style="margin-top: 5rem">
+      <div class="row p-3">
+        <div class="col-6 text-end text-primary">
+          <p style="text-align: center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="25" fill="currentColor"
+              class="bi bi-file-earmark-bar-graph-fill" viewBox="0 0 16 16">
+              <path
+                d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m.5 10v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5m-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5z" />
+            </svg>
+            &nbsp; Worked With
+          </p>
+        </div>
+        <div class="col-6">
+          <p id="entrepreneurCompany">: ABC Firm</p>
+        </div>
+      </div>
+      <div class="row p-3">
+        <div class="col-6 text-end text-primary">
+          <p style="text-align: center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="25" fill="currentColor"
+              class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path
+                d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
+              <path
+                d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
+            </svg>
+            &nbsp;&nbsp;&nbsp;Education
+          </p>
+        </div>
+        <div class="col-6">
+          <p id="entrepreneurEducationdetails">: Master’s Degree, Harvard University</p>
+        </div>
+      </div>
+      <div class="row p-3">
+        <div class="col-6 text-end text-primary">
+          <p style="text-align: center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="25" fill="currentColor" class="bi bi-star-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+            </svg>
+            &nbsp; Experience
+          </p>
+        </div>
+        <div class="col-6">
+          <p id="entrepreneurExperience">: +8 Years</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <p id="entrepreneurDescription">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </p>
+    </div>
+    <div class="Investor mt-5">
+      <h1 class="head display-4">
+        Shared <span style="color: #1753ef">Ideas</span>
+      </h1>
+      <div class="container my-5">
+        <div class="card p-4 text-dark dark-text-white shadow-md"
+          style="background-color: rgb(231, 240, 241); border: none">
+          <div class="d-flex align-items-center mb-4">
+            <img class="rounded-circle" src="Images/Ellipse 1.png" alt="Profile Image" width="100" height="100">
+            <div class="ms-3">
+              <h2 class="h5 text-primary">James</h2>
+              <p class="text-muted mb-0">1 Review</p>
+            </div>
+          </div>
+          <h5 class="text-dark dark-text-white mb-2 lh-lg" style="text-align: left; font-size: 1.3rem">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry!
+          </h5>
+          <p class="text-muted dark-text-muted mb-4 lh-lg" style="font-size: 1.2rem; text-align: left">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <div class="d-flex justify-content-between">
+            <div class="justify-content-around">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                <path
+                  d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z" />
+                <path
+                  d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466" />
+              </svg>
+            </div>
+            <button class="btn btn-primary" style="width: 8rem">Explore</button>
+          </div>
+        </div>
+      </div>
+      <div class="container my-5">
+        <div class="card p-4 text-dark dark-text-white shadow-md"
+          style="background-color: rgb(231, 240, 241); border: none">
+          <div class="d-flex align-items-center mb-4">
+            <img class="rounded-circle" src="Images/Ellipse 1.png" alt="Profile Image" width="100" height="100">
+            <div class="ms-3">
+              <h2 class="h5 text-primary">James</h2>
+              <p class="text-muted mb-0">1 Review</p>
+            </div>
+          </div>
+          <h5 class="text-dark dark-text-white mb-2 lh-lg" style="text-align: left; font-size: 1.3rem">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry!
+          </h5>
+          <p class="text-muted dark-text-muted mb-4 lh-lg" style="font-size: 1.2rem; text-align: left">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <div class="d-flex justify-content-between">
+            <div class="justify-content-around">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                <path
+                  d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z" />
+                <path
+                  d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466" />
+              </svg>
+            </div>
+            <button class="btn btn-primary" style="width: 8rem">Explore</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="businessIdeasContainer" class="container my-5">
+        <!-- Business ideas will be inserted here -->
+    </div>
+    
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    
+    <script>
+      function updateNavbar() {
+        const token = localStorage.getItem("token");
+        const loginLink = document.getElementById("loginLink");
+        const logoutLink = document.getElementById("logoutLink");
+        const profileDropdown = document.getElementById("profileDropdown");
+
+        if (token) {
+          loginLink.style.display = "none";
+          logoutLink.style.display = "block";
+          profileDropdown.style.display = "block";
+        } else {
+          loginLink.style.display = "block";
+          logoutLink.style.display = "none";
+          profileDropdown.style.display = "none";
+        }
+      }
+
+      async function updateUserNavigation(token) {
+        try {
+          const response = await axios.get("http://localhost:3000/check/role", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+
+          if (response.status === 200) {
+            const userType = response.data.role;
+            console.log("usertype:", userType);
+
+            // Show the appropriate profile link
+            const investorProfile = document.getElementById("investorprofile");
+            const entrepreneurProfile = document.getElementById(
+              "entrepreneurprofile"
+            );
+
+            console.log(userType === "entrepreneur");
+            if (userType === "entrepreneur") {
+              entrepreneurProfile.style.display = "block";
+              investorProfile.style.display = "none";
+              // document.getElementById("entrepreneurSection").style.display =
+              //   "block";
+              // document.getElementById("wallet1").innerText =`Wallet: (${response.data.wallet})`
+
+              document.getElementById("mycourse").style.display = "block";
+
+              // document.getElementById("investorSection").style.display = "none";
+              // Hide Entrepreneur Ideas and Entrepreneur List from entrepreneurs
+              document.getElementById("entrepreneurIdea").style.display =
+                "none";
+              document.getElementById("entrepreneurList").style.display =
+                "none";
+
+              // Show Investor Ideas and Investor List to entrepreneurs
+              // document.getElementById("investorIdea").style.display = "block";
+              document.getElementById("investorlist").style.display = "block";
+
+              // Show the success section only to entrepreneurs
+              // document.getElementById("sucessSection").style.display = "block";
+
+              console.log("response");
+              // Show Course, Resources, and ConsultUs sections for entrepreneurs
+              document.getElementById("courseSection").style.display = "block";
+              document.getElementById("resourceSection").style.display =
+                "block";
+              document.getElementById("consultUsSection").style.display =
+                "block"; // Ensure ConsultUs is displayed
+            } else if (userType === "investor") {
+              investorProfile.style.display = "block";
+              entrepreneurProfile.style.display = "none";
+              document.getElementById("entrepreneurSection").style.display =
+                "none";
+              document.getElementById("investorSection").style.display =
+                "block";
+
+              // Show Entrepreneur Ideas and Entrepreneur List for investors
+              document.getElementById("entrepreneurIdea").style.display =
+                "block";
+              document.getElementById("entrepreneurList").style.display =
+                "block";
+
+              // Hide Investor Ideas and Investor List from investors
+              document.getElementById("investorIdea").style.display = "none";
+              document.getElementById("investorlist").style.display = "none";
+
+              // Hide Course, Resources, and ConsultUs sections from investors if needed
+              document.getElementById("courseSection").style.display = "none";
+              document.getElementById("resourceSection").style.display = "none";
+              console.log("Course section");
+              document.getElementById("consultUsSection").style.display =
+                "none";
+              // Hide the success section from investors
+              document.getElementById("sucessSection").style.display = "none";
+            } else {
+              entrepreneurProfile.style.display = "none";
+              investorProfile.style.display = "none";
+              document.getElementById("entrepreneurSection").style.display =
+                "none";
+              document.getElementById("investorSection").style.display = "none";
+            }
+          } else {
+            console.error("Failed to fetch user type:", response.statusText);
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem("token");
+
+        updateNavbar();
+
+        if (token) {
+          updateUserNavigation(token);
+        } else {
+          // If no one is logged in, show the Consult Us section but disable the link
+          document.getElementById("consultUsSection").style.display = "block";
+          document.getElementById("consultLink").setAttribute("href", "#"); // Disable access without login
+          document
+            .getElementById("consultLink")
+            .addEventListener("click", function (event) {
+              event.preventDefault();
+              alert("Please Log in");
+              // open login page
+              window.location.href = "login.html";
+            });
+        }
+      });
+
+      async function handleLogout() {
+        try {
+          const response = await axios.post(
+            "http://localhost:3000/auth/logout"
+          );
+          alert(response.data.message);
+          localStorage.removeItem("token");
+          window.location.href = "index.html";
+        } catch (error) {
+          console.error("Logout error:", error);
+          alert("Logout failed. Please try again.");
+        }
+      }
+
+      document
+        .getElementById("logoutLink")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default link behavior
+          handleLogout(); // Call the logout function when link is clicked
+        });
+    </script>
+
+    <script>
+      // on clink consultsus open loagin
+
+      document
+        .getElementById("log1")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default link behavior
+          window.location.href = "login.html"; // Redirect to login page
+        });
+    </script>
+<script>
+  function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    return Object.fromEntries(params.entries());
+  }
+
+  // Fetch entrepreneur details and business ideas from the server
+  async function fetchEntrepreneurDetails() {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        alert("You need to log in first.");
+        return;
+      }
+
+      const params = getQueryParams();
+      const EntrepreneurId = params.id;
+
+      // Send a request to the server with the Authorization token
+      const response = await axios.get(`http://localhost:3000/investor/entrepreneur/${EntrepreneurId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      console.log(response.status);
+
+      // Check for the API response status
+      if (response.status === 200) {
+        const data = response.data;
+        const { entrepreneur, entrepreneurIdeas } = data;
+
+        // Update entrepreneur details
+        document.getElementById('entrepreneurName').textContent = entrepreneur.name;
+        document.getElementById('entrepreneurRole').textContent = entrepreneur.role;
+        document.getElementById('entrepreneurEducationdetails').textContent = entrepreneur.educationdetails;
+        document.getElementById('entrepreneurCompanyname').textContent = entrepreneur.companyname;
+        document.getElementById('entrepreneurDescription').textContent = entrepreneur.description;
+        document.getElementById('entrepreneurExperience').textContent = entrepreneur.experience;
+        document.getElementById('entrepreneurID').href = `InvestorChatBox.html?id=${entrepreneur._id}`;
+
+        // Generate HTML for business ideas
+        const container = document.getElementById('businessIdeasContainer');
+        container.innerHTML = ''; // Clear previous content if any
+
+        entrepreneurIdeas.forEach(idea => {
+          const card = `
+            <div class="card p-4 text-dark dark-text-white shadow-md" style="background-color: rgb(231, 240, 241); border: none; margin-bottom: 1rem;">
+              <div class="d-flex align-items-center mb-4">
+                <img class="rounded-circle" src="${idea.attachments[0] || 'Images/Ellipse 1.png'}" alt="Profile Image" width="100" height="100">
+                <div class="ms-3">
+                  <h2 class="h5 text-primary">${idea.name}</h2>
+                  <p class="text-muted mb-0">1 Review</p>
+                </div>
+              </div>
+              <h5 class="text-dark dark-text-white mb-2 lh-lg" style="text-align: left; font-size: 1.3rem">
+                ${idea.content}
+              </h5>
+              <p class="text-muted dark-text-muted mb-4 lh-lg" style="font-size: 1.2rem; text-align: left">
+                Goal: ${idea.goal}
+                <br>Domain: ${idea.domain}
+                <br>Qualification: ${idea.qualification}
+              </p>
+              <div class="d-flex justify-content-between">
+                <div class="justify-content-around">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up-circle-fill"></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-down-circle-fill"></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-fill"></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-counterclockwise"></svg>
+                </div>
+                <button class="btn btn-primary" style="width: 8rem">Explore</button>
+              </div>
+            </div>
+          `;
+          container.insertAdjacentHTML('beforeend', card);
+        });
+
+      }
+    } catch (error) {
+      // Handle specific error status codes
+      if (error.response) {
+        const status = error.response.status;
+
+        if (status === 400) {
+          alert(error.response.data.message || "Bad request.");
+          window.history.back(); // Redirect to the previous page
+        } else if (status === 402) {
+          alert("Insufficient balance. Please add funds to continue.");
+          window.history.back(); // Go back to the previous page
+        } else {
+          // Generic error for other status codes
+          alert(error.response.data.message || "Failed to fetch entrepreneur details");
+        }
+      } else {
+        // Handle general errors (e.g., network errors)
+        console.error("Error:", error);
+        alert("An unexpected error occurred.");
+      }
+    }
+  }
+
+  // Call fetchEntrepreneurDetails when page loads
+  window.onload = fetchEntrepreneurDetails;
+</script>
+
+
+
+
+
+</body>
+
+</html>
